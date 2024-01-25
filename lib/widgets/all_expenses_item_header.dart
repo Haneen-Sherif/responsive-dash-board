@@ -7,24 +7,32 @@ class AllExpensesItemHeader extends StatelessWidget {
     required this.image,
     required this.imgBackGround,
     required this.icon,
+    required this.imageColor,
   });
 
   final String image;
   final Color imgBackGround;
   final Color icon;
+  final Color imageColor;
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Container(
-          width: 60,
-          height: 60,
-          decoration: ShapeDecoration(
-            color: imgBackGround,
-            shape: const OvalBorder(),
-          ),
-          child: Center(
-            child: SvgPicture.asset(image),
+        Flexible(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 60),
+            child: AspectRatio(
+              aspectRatio: 1,
+              child: Container(
+                decoration: ShapeDecoration(
+                  color: imgBackGround,
+                  shape: const OvalBorder(),
+                ),
+                child: Center(
+                  child: SvgPicture.asset(image, color: imageColor),
+                ),
+              ),
+            ),
           ),
         ),
         const Spacer(),

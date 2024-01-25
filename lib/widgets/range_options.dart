@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_dash_board/utils/app_styles.dart';
 
 class RangeOptions extends StatelessWidget {
   const RangeOptions({
@@ -20,15 +21,9 @@ class RangeOptions extends StatelessWidget {
         ),
       ),
       child: Row(children: [
-        const Text(
+        Text(
           'Monthly',
-          style: TextStyle(
-            color: Color(0xFF064060),
-            fontSize: 16,
-            fontFamily: 'Montserrat',
-            fontWeight: FontWeight.w500,
-            height: 0,
-          ),
+          style: AppStyles.styleMedium16(context),
         ),
         const SizedBox(
           width: 18,
